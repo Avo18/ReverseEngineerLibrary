@@ -32,13 +32,9 @@ INFO_API char const* TI_GatherSysInfo(void)
 /*
 7E60 offset
 */
-AdapterInformation* offset_0x10017fe8 = NULL;
 INFO_API struct AdapterInformation* TI_GetAdptInfo(void)
 {
-	if (!offset_0x10017fe8)
-		return NULL;
-	
-	return offset_0x10017fe8;
+	return CallStaticMethod<AdapterInformation*>((unsigned int)base_address + 0x7E60);
 }
 
 /*
